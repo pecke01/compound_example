@@ -1,0 +1,14 @@
+curl localhost:9200/compound_demo/type/1 -d '{"swedishstring":"Sveriges fotbollslag är i Österrike."}'
+
+curl -XGET 'localhost:9200/compound_demo/type/_search' -d '{
+    "query": {
+        "term": {
+            "swedishstring": "fot"
+        }
+    },
+    "highlight": {
+        "fields": {
+            "swedishstring": {}
+        }
+    }
+ }'

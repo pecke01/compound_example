@@ -1,0 +1,26 @@
+{
+	"mappings":{
+		"_default_":{
+			"_meta":{
+				"type":"Compund word example"
+			},
+			"_ttl" : {
+				"enabled" : true
+			},
+			"dynamic_templates": [
+			{
+				"swedish":{
+					"mapping":{
+						"type":"string",
+						"analyzer" : "marcusswedish",
+						"term_vector": "with_positions_offsets"
+					},
+					"match":"swedishstring"
+				}
+			}
+
+			]
+			
+		}
+	}
+}

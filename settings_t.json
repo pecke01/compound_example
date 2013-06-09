@@ -1,0 +1,25 @@
+{
+	"settings" : {
+		"index": {
+			"number_of_shards": 1,
+			"number_of_replicas": 0
+		},
+		"analysis": {
+			"analyzer": {
+				"marcusswedish" :{
+        			"type" : "custom",
+                	"tokenizer" : "standard",
+                	"filter" : ["swedishTokenFilter"]
+        		}
+
+			},
+			"filter": {
+				"swedishTokenFilter" : {
+                	"type" : "dictionary_decompounder",
+                	"word_list" : "[fotboll, fot, lag, boll,test]",
+                	"min_subword_size" : 2
+            	}
+			}            
+		}
+	}
+}
